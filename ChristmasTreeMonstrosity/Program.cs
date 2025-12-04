@@ -1,0 +1,3 @@
+﻿string PrintTrunk(int x, int y) => String.Concat(Enumerable.Repeat(String.Format("{0}{1}{2}{1}{0}{3}", '|', new string(' ', ((y - x) / 2)), String.Concat(Enumerable.Repeat("*", x)), "\n"), x));
+string PrintTriangle(int x, int y) => String.Concat(Enumerable.Range(0, x).Select(i => String.Format("{0}{1}{2}{1}{0}{3}", '|', new String(' ', ((y - ((2 * i) + 1)) / 2)), new String('*', ((2 * i) + 1)), "\n")));
+(new List<int>() { 4, 6, 8 }).Select(x => PrintTriangle(x, 16)).Append(PrintTrunk(3, 16)).ToList().ForEach(x => Console.Write(x));
